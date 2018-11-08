@@ -1,23 +1,58 @@
 body {
-  background-color: white;
+  background-color: #d6d6d6;
+}
+.WIP__page {
+  background-color: #d6d6d6;
+  text-align: center;
 }
 .WIP__container {
-  background-color: rgb(22, 18, 18);
-  padding: 5rem;
-  width: 50rem;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #f1f1f1;
+  padding: 42px;
   margin: auto;
+  text-align: center;
   margin-top: 15rem;
+  display: inline-block;
+  padding-bottom:8px;
 }
 .WIP__title {
-  font: 500 5rem sans-serif;
+  font: 600 2rem "Roboto", sans-serif;
   margin: auto;
   text-align: center;
-  color: aliceblue;
 }
 .WIP__text {
-  font: 500 1rem sans-serif;
+  font: 1.2rem "Roboto", sans-serif;
   margin: auto;
   text-align: center;
-  color: aliceblue;
-  margin-top: 2rem;
+  margin-top: 40px;
+}
+.SocialLink {
+  margin-top: 48px;
+  margin-bottom: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: inline-block;
+  opacity: 0.4;
+  background-size: 30px 30px;
+  transition: all .5s ease;
+}
+.SocialLink--imdb {
+  margin-right:8px;
+  background: url(../assets/img/imdb.png) 0 0 no-repeat;
+  background-size: 30px 30px;
+}
+.SocialLink--linkedin {
+  background: url(../assets/img/linkedin.png) 0 0 no-repeat;
+  background-size: 30px 30px;
+}
+.SocialLink--imdb:hover {
+  opacity:1;
+  background: url(../assets/img/imdb-hover.png) 0 0 no-repeat;
+  background-size: 30px 30px;
+}
+.SocialLink--linkedin:hover {
+  opacity:1;
+  background: url(../assets/img/linkedin-hover.png) 0 0 no-repeat;
+  background-size: 30px 30px;
 }
