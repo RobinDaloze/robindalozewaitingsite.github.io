@@ -1,3 +1,20 @@
+// SETTINGS
+@import "settings/_settings-typography.scss";
+@import "settings/_settings-typography.scss";
+
+//FUNCTIONS
+@import "functions/function-pxtorem.scss";
+
+//mixins
+@import "mixins/mixins-breakpoints.scss";
+
+
+
 // BASE
 
 @import "base/_base-body.scss";
+@import "base/_base-html.scss";
+
+// COMPONENTS
+@import "components/_components-mainnav.scss"
+

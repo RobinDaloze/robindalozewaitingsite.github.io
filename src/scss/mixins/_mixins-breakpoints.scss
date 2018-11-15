@@ -1,0 +1,56 @@
+// ---------------
+// SETTINGS
+// ---------------
+
+$breakpoints-map : (
+    small: (
+        media-query:"all and (min-width:500px)",
+        generate-utilities: true
+    ),
+    medium: (
+        media-query:"all and (min-width:750px)",
+        generate-utilities: true
+    ),
+    large: (
+        media-query:"all and (min-width:1024px)",
+        generate-utilities: true
+    )
+)!default;
+
+
+// ---------------
+// BREAKPOINTS MIXIN
+// ---------------
+
+
+
+/**
+* - check tant passed name exists in $breakpoints-map
+* - if it does, get parameters (query)
+* - Write media query block using query
+* - Write css rules in query block.
+**/
+
+@mixin breakpoint($name){
+    // sanitize $name
+    $name: unquote($name);
+    //get parameters from $breakpoints map
+    @if map-has-key($breakpoints-map,$name )
+    {
+        //get params
+        $params:map-get($breakpoints-map, $name);
+        $query:map-get($params, "media-query");
+
+        @debug "DEBUG query is #{$query}";
+
+        @media #{$query}
+        {
+            @content;
+        }
+    } @else
+    {
+        @error "#{$name} must be a valid key in $breakpoints-map";
+    }
+}
+
+

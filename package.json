@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "test NPM",
   "scripts": {
-    "browsersync:start": "browser-sync start --server \".\" --files \"*.html\" \"dist/\"",
-    "build:css": "node-sass --output-style=compressed src/scss/ --output dist/css/ ",
+    "browsersync:start": "browser-sync start --no-open --server \".\" --files \"*.html\" \"dist/\"",
+    "build:css": "node-sass --output-style=compressed src/scss/main.scss dist/css/main.css ",
     "watch:css": "onchange src/scss -- npm run build:css",
     "del":"del-cli \"dist\"",
     "watch": "npm-run-all -p browsersync:start watch:css",
