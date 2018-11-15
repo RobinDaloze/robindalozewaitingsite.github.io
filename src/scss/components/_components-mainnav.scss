@@ -1,0 +1,57 @@
+// -------------------------
+// Settings
+// -------------------------
+
+
+
+
+
+
+
+
+
+// -------------------------
+// mainnav
+// -------------------------
+
+.c-mainnav
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    @include breakpoint(medium){
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.c-mainnav__item:not(:last-child)
+{
+    border-bottom: solid 1px #cacaca;
+    @media all and (min-width:750px)
+    {
+        border-bottom: none;
+    }
+}
+
+
+.c-mainnav__link
+{
+    display: block;
+    padding: 0.5rem 0;
+    font-size: pxtorem(14px); //<------- FUNCTIONS
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+    @media all and (min-width:750px)
+    {
+        padding: 1rem 3rem
+
+    }
+}
