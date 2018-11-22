@@ -1,0 +1,72 @@
+/*---------------------
+=Settings
+----------------------*/
+$spacing-map:(
+    none:0,
+    xs:6px,
+    s:12px,
+    base:18px,
+    l:24px,
+    xl:32px
+) !default;
+
+/*-------------------
+= Padding
+------------------*/ 
+
+$breakpoints-map : (
+    small: (
+        media-query:"all and (min-width:500px)",
+        generate-utilities: true
+    ),
+    medium: (
+        media-query:"all and (min-width:750px)",
+        generate-utilities: true
+    ),
+    large: (
+        media-query:"all and (min-width:1024px)",
+        generate-utilities: true
+    )
+) !default;
+
+// -------------------
+// MARGINS (base classes)
+// -------------------
+
+@each $key, $value in $spacing-map {
+    .u-margin-all-#{$key}    {margin: pxtorem($value)}
+    .u-margin-top-#{$key}    {margin-top: pxtorem($value)}
+    .u-margin-right-#{$key}  {margin-right: pxtorem($value)}
+    .u-margin-bottom-#{$key} {margin-bottom: pxtorem($value)}
+    .u-margin-left-#{$key}   {margin-left: pxtorem($value)}
+}
+
+// -------------------
+// MARGINS (with media query)
+// -------------------
+@each $key, $values in $breakpoints-map {
+
+    //see if we need to generate utilities
+    $utilities :map-get($values, generate-utilities);
+
+    //if we need to generate utilities
+    @if($utilities == true)
+    {
+        //get breakpoint name and media query
+        $breakpoint-name: $key;
+        $query: map-get($values, media-query);
+        //write media query
+        @media #{$query}
+        {
+            @each $key, $value in $spacing-map {
+                .u-margin-all-#{$key}\@#{$breakpoint-name}    {margin: pxtorem($value)}
+                .u-margin-top-#{$key}\@#{$breakpoint-name}    {margin-top: pxtorem($value)}
+                .u-margin-right-#{$key}\@#{$breakpoint-name}  {margin-right: pxtorem($value)}
+                .u-margin-bottom-#{$key}\@#{$breakpoint-name} {margin-bottom: pxtorem($value)}
+                .u-margin-left-#{$key}\@#{$breakpoint-name}   {margin-left: pxtorem($value)}
+            } 
+        }  
+    }
+    
+}
+
