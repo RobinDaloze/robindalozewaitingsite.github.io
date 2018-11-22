@@ -14,7 +14,6 @@
         @return 0;
     } @else if(unit($value)=="px")
     {
-        @warn "We have pixels";
         @return ($value/16px)*1rem;
     } @else
     {
